@@ -3,16 +3,25 @@
   "description": "elastic.io component for the Petstore API",
   "docsUrl": "https://github.com/elasticio/petstore-component-java",
   "credentials": {
-    "fields": {
-      "apiKey": {
-        "label": "API key",
-        "required": true,
-        "viewClass": "TextFieldWithNoteView",
-        "note": "Please use <b>elasticio</b> as API key. For more details see <a href='https://petstore.elastic.io/docs/' target='_blank'>Petstore API docs</a>."
-      }
-    },
-    "verifier": "io.elastic.petstore.ApiKeyVerifier"
-  },
+		"fields": {
+      "databaseUrl": {
+				"label": "Database Host URL or IP",
+				"required": true,
+        "viewClass": "TextFieldWithNoteView"
+        },
+			"username": {
+				"label": "Database UserName",
+				"required": true,
+				"viewClass": "TextFieldWithNoteView"
+			},
+			"password": {
+				"label": "Password",
+				"required": true,
+				"viewClass": "TextFieldWithNoteView"
+			}		      
+	},
+	"verifier": "io.elastic.sagetomt.AppKeyVerifier"
+	},
   "triggers": {
     "getPetsByStatus": {
       "main": "io.elastic.petstore.triggers.GetPetsByStatus",
@@ -75,6 +84,15 @@
       "metadata": {
         "out": "./schemas/getPetsByStatus.out.json"
       }
+    }, 
+    "getAllCustomer": {
+      "main": "io.elastic.petstore.triggers.GetAllCustomer",
+      "type": "polling",
+      "title": "Get all customer details",
+      "description": "Get all customer details",
+      "metadata": {
+        "out": "./schemas/CreateCustomer.out.json"
+      }
     }
   },
   "actions": {
@@ -85,6 +103,16 @@
       "metadata": {
         "in": "./schemas/createPet.in.json",
         "out": "./schemas/createPet.out.json"
+      }
+    }
+    ,
+    "CreateAllCustomer": {
+      "main": "io.elastic.petstore.actions.CreateAllCustomer",
+      "title": "Create a customer",
+      "description": "Creates a new customer",
+      "metadata": {
+        "in": "./schemas/CreateCustomer.in.json",
+        "out": "./schemas/CreateCustomer.out.json"
       }
     }
   }

@@ -16,15 +16,31 @@ import javax.json.JsonObject;
 public class ApiKeyVerifier implements CredentialsVerifier {
 
     private static final Logger logger = LoggerFactory.getLogger(ApiKeyVerifier.class);
-
-    @Override
+    
+     @Override
     public void verify(final JsonObject configuration) throws InvalidCredentialsException {
-        logger.info("About to verify the provided API key by retrieving the user");
-        try {
-            final JsonObject user = HttpClientUtils.getSingle("/user/me", configuration);
-            logger.info("User {} successfully retrieved. Credentials are valid", user.getString("username"));
+       // logger.info("About to verify the provided API key by retrieving the user");
+    	
+    	 try {
+             final JsonString databaseUrlString = configuration.getJsonString("databaseUrl");
+        	 final JsonString usernameString = configuration.getJsonString("username");
+     	     final JsonString passwordString = configuration.getJsonString("password");
+     	    
+     	    String databaseUrl=databaseUrlString.getString();
+     	    String username=usernameString.getString();
+     	    String password=passwordString.getString();
+     	    
+     	        
+     	   	Class.forName("oracle.jdbc.driver.OracleDriver");	   		
+     	   	Connection con = (Connection)DriverManager.getConnection(databaseUrl,username,password);    
+                 	   	
+     	   	logger.info("DSN Connection status {}"+ con);                    
+            
         } catch (Exception e) {
+        	
             throw new InvalidCredentialsException("Failed to verify credentials", e);
+            
         }
-    }
+    }      
+
 }

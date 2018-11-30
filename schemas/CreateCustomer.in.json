@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+      "PARTY_ID": {
+        "type": "string",
+        "required": true,
+        "title": "PARTY_ID"
+      },
+      "PARTY_NAME": {
+        "type": "string",
+        "required": true,
+        "title": "PARTY_NAME"
+      }
+    }
+  }
+  
