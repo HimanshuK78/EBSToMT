@@ -42,7 +42,7 @@ private static final Logger logger = LoggerFactory.getLogger(DatabaseAcess.class
 			
 		    SelectCustomerQuery = "select * from hz_parties";
 
-		    PreparedStatement stmt = Dbutils.getPreparedStatement(SelectQuery,configuration);
+		    PreparedStatement stmt = Dbutils.getPreparedStatement(SelectCustomerQuery,configuration);
 		  	stmt.execute();
 			ResultSet rs=stmt.getResultSet(); 
 

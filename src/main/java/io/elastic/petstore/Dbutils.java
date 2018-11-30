@@ -57,7 +57,7 @@ public class Dbutils {
      	    
      	        
      	   	 Class.forName("oracle.jdbc.driver.OracleDriver");	   		
-     	   	 Connection con = (Connection)DriverManager.getConnection(databaseUrl,username,password);    
+     	   	 con = (Connection)DriverManager.getConnection(databaseUrl,username,password);    
             
     	   	//Connection con =DriverManager.getConnection("jdbc:pervasive://66.199.227.124:1583/sageodbc","Peachtree","admin786");
     	   	logger.info("Database Connection {} ok."+con);
