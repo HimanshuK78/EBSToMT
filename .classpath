@@ -6,12 +6,12 @@
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	
-	<classpathentry kind="lib" path="libs/httpclient-4.3-beta1.jar"/>
-	<classpathentry kind="lib" path="libs/http-core-4.1.jar"/>
-	<classpathentry kind="lib" path="libs/javax.json-1.0.jar"/>	
-	<classpathentry kind="lib" path="libsjavax.ws.rs-api-2.0.jar"/>
-	<classpathentry kind="lib" path="libs/org.slf4j.jar/">
-	<classpathentry kind="lib" path="libs/jdbc.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.3-beta1.jar"/>
+	<classpathentry kind="lib" path="lib/http-core-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/javax.json-1.0.jar"/>	
+	<classpathentry kind="lib" path="lib/javax.ws.rs-api-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/org.slf4j.jar/">
+	<classpathentry kind="lib" path="lib/jdbc.jar"/>
 	
 	
 	<classpathentry kind="lib" path="C:/Users/admin/Downloads/New_folder/httpclient-4.3-beta1.jar"/>
