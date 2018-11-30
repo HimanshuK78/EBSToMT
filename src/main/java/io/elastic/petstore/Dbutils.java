@@ -6,61 +6,65 @@ import java.sql.SQLException;
 
 import javax.json.JsonObject;
 import javax.json.JsonString;
+
+
 public class Dbutils {
+
 	public static PreparedStatement getPreparedStatement(String query,final JsonObject configuration)throws ClassNotFoundException
 	,SQLException{
 	    try {
 	    	
-	    	final JsonString usernamestring = configuration.getJsonString("username");
-    	    final JsonString passwordstring = configuration.getJsonString("password");
-    	    final JsonString databasednsstring = configuration.getJsonString("databasedns");
-    	    final JsonString databasehoststring = configuration.getJsonString("databasehost");
-    	    final JsonString databaseportstring = configuration.getJsonString("databaseport");
-    	    String username=usernamestring.getString();
-    	    String password=passwordstring.getString();
-    	    String databasedns=databasednsstring.getString();
-    	    String databasehost=databasehoststring.getString();
-    	    String portno=databaseportstring.getString();
-	    
-	   	 Class.forName("com.pervasive.jdbc.v2.Driver");	   		
-	   	 //Connection con =DriverManager.getConnection("jdbc:pervasive://66.199.227.124:1583/sageodbc","Peachtree","admin786");
-	     Connection con =DriverManager.getConnection("jdbc:pervasive://"+databasehost+":"+portno+"/"+databasedns,username,password);
+			
+	    	 final JsonString databaseUrlString = configuration.getJsonString("databaseUrl");
+        	 final JsonString usernameString = configuration.getJsonString("username");
+     	     final JsonString passwordString = configuration.getJsonString("password");
+     	    
+		     String databaseUrl=databaseUrlString.getString();
+			 String username=usernameString.getString();
+			 String password=passwordString.getString();
+     	    
+     	        
+     	   	 Class.forName("oracle.jdbc.driver.OracleDriver");	   		
+     	   	 Connection con = (Connection)DriverManager.getConnection(databaseUrl,username,password);
 	   	 //System.out.println("DSN Connection ok."+databasehost+":"+portno+"/"+databasedns+username+password);
-	   	PreparedStatement stmt=con.prepareStatement(query);
-		return stmt;
+	    
+	      	PreparedStatement stmt=con.prepareStatement(query);
+		    return stmt;
 	
-} catch (Exception e) {
+        } catch (Exception e) {
 	      e.printStackTrace();
 	    }
 		return null; 
-}
+    }
 
-  public static Connection login(final JsonObject configuration )throws ClassNotFoundException
+  public static Connection getDatabaseConnection(final JsonObject configuration )throws ClassNotFoundException
 	,SQLException{
     	
-    	 Connection con =null;
+		Connection con =null;
+
     	    try {
-    	    final JsonString usernamestring = configuration.getJsonString("username");
-    	    final JsonString passwordstring = configuration.getJsonString("password");
-    	    final JsonString databasednsstring = configuration.getJsonString("databasedns");
-    	    final JsonString databasehoststring = configuration.getJsonString("databasehost");
-    	    final JsonString databaseportstring = configuration.getJsonString("databaseport");
-    	    String username=usernamestring.getString();
-    	    String password=passwordstring.getString();
-    	    String databasedns=databasednsstring.getString();
-    	    String databasehost=databasehoststring.getString();
-    	    String portno=databaseportstring.getString();    	    
-    	   	 Class.forName("com.pervasive.jdbc.v2.Driver");	   		
-    	 	  con =DriverManager.getConnection("jdbc:pervasive://"+databasehost+":"+portno+"/"+databasedns,username,password);
+
+    	     final JsonString databaseUrlString = configuration.getJsonString("databaseUrl");
+        	 final JsonString usernameString = configuration.getJsonString("username");
+     	     final JsonString passwordString = configuration.getJsonString("password");
+     	    
+		     String databaseUrl=databaseUrlString.getString();
+			 String username=usernameString.getString();
+			 String password=passwordString.getString();
+     	    
+     	        
+     	   	 Class.forName("oracle.jdbc.driver.OracleDriver");	   		
+     	   	 Connection con = (Connection)DriverManager.getConnection(databaseUrl,username,password);    
+            
     	   	//Connection con =DriverManager.getConnection("jdbc:pervasive://66.199.227.124:1583/sageodbc","Peachtree","admin786");
-    	   	logger.info("DSN Connection {} ok."+con);
-    	   	//System.out.println("DSN Connection ok."+con);    	   
+    	   	logger.info("Database Connection {} ok."+con);
+    	   	//System.out.println("DSN Connection ok."+con);  
+
     	    } catch (Exception e) {
     		      e.printStackTrace(); 		     
     		      
     		    }		
     	   return  con;
     }
-    	
-	
+    		
 }

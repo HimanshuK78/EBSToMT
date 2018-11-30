@@ -1,4 +1,5 @@
 package io.elastic.sagetomt.actions;
+
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
@@ -11,9 +12,10 @@ import io.elastic.api.Message;
 import io.elastic.api.Module;
 import io.elastic.sagetomt.DatabaseAcess;
 
-public class Getcompany implements Module {
+public class CreateAllCustomer implements Module {
+
     private static final Logger logger = LoggerFactory.getLogger(Getcompany.class);
-   
+   /*
     @Override
     public void execute(final ExecutionParameters parameters) {
         final JsonObject configuration = parameters.getConfiguration();          
@@ -46,6 +48,6 @@ public class Getcompany implements Module {
        
 
     }
-    
+    /*
     
 }

@@ -1,4 +1,5 @@
 package io.elastic.sagetomt.trigger;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
@@ -14,13 +15,20 @@ import io.elastic.api.InvalidCredentialsException;
 import io.elastic.api.Message;
 import io.elastic.api.Module;
 import io.elastic.sagetomt.*;
-public class GetAllVendor implements Module {
+
+
+public class GetAllCustomer implements Module {
+
 	private static final Logger logger = LoggerFactory.getLogger(GetAllVendor.class);
+
 	String vendorexecutiontime=null;
+
     @Override
     public void execute(final ExecutionParameters parameters) {
+/*
         final JsonObject configuration = parameters.getConfiguration();          
         JsonObject snapshot=parameters.getSnapshot();
+
         if(snapshot.get("vendorexecutiontime")!=null)
         {
         	vendorexecutiontime=snapshot.getString("vendorexecutiontime");
@@ -59,10 +67,8 @@ public class GetAllVendor implements Module {
 				e1.printStackTrace();
 			}
         }
-       
+       */   
     }
     
-    
-    
-   
+
 }
