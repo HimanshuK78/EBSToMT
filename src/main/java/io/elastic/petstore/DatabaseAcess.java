@@ -25,6 +25,8 @@ import io.elastic.api.Message;
 
 public class DatabaseAcess {
 
+private static final Logger logger = LoggerFactory.getLogger(DatabaseAcess.class);
+
 	DatabaseAcess(){
 
 	}
@@ -38,7 +40,7 @@ public class DatabaseAcess {
 
 		try {	
 			
-		    String SelectCustomerQuery = "select * from hz_parties";
+		    SelectCustomerQuery = "select * from hz_parties";
 
 		    PreparedStatement stmt = Dbutils.getPreparedStatement(SelectQuery,configuration);
 		  	stmt.execute();
@@ -70,14 +72,13 @@ public class DatabaseAcess {
 		  		
 		    		}//while
 		  		
-		  		 vendorarray=customerList.build();
+		  		 customerArray=customerList.build();
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		
-		
-	 return vendorarray;
+	
+	 return customerArray;
 		
 	}
 

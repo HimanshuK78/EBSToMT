@@ -14,7 +14,7 @@ import io.elastic.sagetomt.DatabaseAcess;
 
 public class CreateAllCustomer implements Module {
 
-    private static final Logger logger = LoggerFactory.getLogger(Getcompany.class);
+    private static final Logger logger = LoggerFactory.getLogger(CreateAllCustomer.class);
    /*
     @Override
     public void execute(final ExecutionParameters parameters) {

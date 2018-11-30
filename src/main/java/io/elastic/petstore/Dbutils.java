@@ -11,6 +11,8 @@ import java.util.*;
 
 public class Dbutils {
 
+ private static final Logger logger = LoggerFactory.getLogger(Dbutils.class);
+
 	public static PreparedStatement getPreparedStatement(String query,final JsonObject configuration)throws ClassNotFoundException
 	,SQLException{
 	    try {

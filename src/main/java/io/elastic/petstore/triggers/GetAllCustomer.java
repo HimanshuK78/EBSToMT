@@ -19,7 +19,7 @@ import io.elastic.sagetomt.*;
 
 public class GetAllCustomer implements Module {
 
-	private static final Logger logger = LoggerFactory.getLogger(GetAllVendor.class);
+	private static final Logger logger = LoggerFactory.getLogger(GetAllCustomer.class);
 
 	String vendorexecutiontime=null;
 

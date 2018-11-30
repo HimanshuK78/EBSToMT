@@ -7,9 +7,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	
 	<classpathentry kind="lib" path="C:/Users/admin/Downloads/New_folder/httpclient-4.3-beta1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/admin/Downloads/New_folder/http-core-4.1"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Downloads/New_folder/http-core-4.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/admin/Downloads/New_folder/javax.json-1.0.jar"/>	
 	<classpathentry kind="lib" path="C:/Users/admin/Downloads/New_folder/javax.ws.rs-api-2.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/admin/Downloads/New_folder/org.slf4j/">
+	<classpathentry kind="lib" path="C:/Users/admin/Downloads/New_folder/org.slf4j.jar/">
+	<classpathentry kind="lib" path="C:/Users/admin/Downloads/New_folder/ojdbc6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
