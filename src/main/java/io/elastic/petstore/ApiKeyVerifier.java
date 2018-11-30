@@ -3,13 +3,15 @@ package io.elastic.petstore;
 
 import io.elastic.api.CredentialsVerifier;
 import io.elastic.api.InvalidCredentialsException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import javax.json.JsonString;
+
 import java.sql.DriverManager;
 import java.sql.Connection;
+
+import javax.json.JsonString;
 import javax.json.JsonObject;
-import java.util.*; 
 
 /**
  * Implementation of {@link CredentialsVerifier} used to verfy that credentials provide by user
