@@ -15,9 +15,10 @@ import io.elastic.sagetomt.DatabaseAcess;
 public class CreateAllCustomer implements Module {
 
     private static final Logger logger = LoggerFactory.getLogger(CreateAllCustomer.class);
-   /*
+   
     @Override
     public void execute(final ExecutionParameters parameters) {
+        /*
         final JsonObject configuration = parameters.getConfiguration();          
              try {           
             DatabaseAcess dbobject = new DatabaseAcess();
@@ -46,8 +47,8 @@ public class CreateAllCustomer implements Module {
             }
         }
        
-
+*/
     }
-    */
+    
     
 }
