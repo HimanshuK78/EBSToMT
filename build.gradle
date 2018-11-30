@@ -22,6 +22,14 @@ dependencies {
     compile "io.elastic:sailor-jvm:2.0.1"
     compile "org.glassfish.jersey.core:jersey-client:2.25.1"
     compile "org.glassfish.jersey.media:jersey-media-json-processing:2.25.1"
+	
+	compile "httpclient-4.3-beta1.jar"
+    compile "httpclient-4.3-beta1.jar"
+	compile "http-core-4.1.jar"
+	compile "javax.json-1.0.jar"
+	compile "javax.ws.rs-api-2.0.jar"
+    compile "org.slf4j.jar"
+	compile "jdbc.jar"
 }
 
 uploadArchives {

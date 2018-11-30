@@ -6,6 +6,8 @@ import java.sql.SQLException;
 
 import javax.json.JsonObject;
 import javax.json.JsonString;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.*; 
 
 
