@@ -19,27 +19,20 @@ public class Dbutils {
 	public static PreparedStatement getPreparedStatement(String query,final JsonObject configuration)throws ClassNotFoundException
 	,SQLException{
 	    try {
+
+	    	Connection con = Dbutils.getDatabaseConnection(configuration);
 	    	
-			
-	    	 final JsonString databaseUrlString = configuration.getJsonString("databaseUrl");
-        	 final JsonString usernameString = configuration.getJsonString("username");
-     	     final JsonString passwordString = configuration.getJsonString("password");
-     	    
-		     String databaseUrl=databaseUrlString.getString();
-			 String username=usernameString.getString();
-			 String password=passwordString.getString();
-     	    
-     	        
-     	   	 Class.forName("oracle.jdbc.driver.OracleDriver");	   		
-     	   	 Connection con = (Connection)DriverManager.getConnection(databaseUrl,username,password);
-	   	 //System.out.println("DSN Connection ok."+databasehost+":"+portno+"/"+databasedns+username+password);
-	    
 	      	PreparedStatement stmt=con.prepareStatement(query);
+	      	
+	      	logger.info("Database Connection {} ok." + con);
+	      	
 		    return stmt;
 	
         } catch (Exception e) {
+        	logger.info("Prepared Statement Error");
 	      e.printStackTrace();
 	    }
+	    
 		return null; 
     }
 
@@ -54,22 +47,21 @@ public class Dbutils {
         	 final JsonString usernameString = configuration.getJsonString("username");
      	     final JsonString passwordString = configuration.getJsonString("password");
      	    
-		     String databaseUrl=databaseUrlString.getString();
-			 String username=usernameString.getString();
-			 String password=passwordString.getString();
+		     String databaseUrl = databaseUrlString.getString();
+			 String username = usernameString.getString();
+			 String password = passwordString.getString();
      	    
      	        
      	   	 Class.forName("oracle.jdbc.driver.OracleDriver");	   		
      	   	 con = (Connection)DriverManager.getConnection(databaseUrl,username,password);    
             
-    	   	//Connection con =DriverManager.getConnection("jdbc:pervasive://66.199.227.124:1583/sageodbc","Peachtree","admin786");
-    	   	logger.info("Database Connection {} ok."+con);
-    	   	//System.out.println("DSN Connection ok."+con);  
-
+    	   	logger.info("Database Connection {} ok." + con);
+    	   	
     	    } catch (Exception e) {
-    		      e.printStackTrace(); 		     
-    		      
-    		    }		
+    	    	logger.info("Database Connection Error");	    
+    		      e.printStackTrace(); 		      
+    		}	
+    	    
     	   return  con;
     }
     		

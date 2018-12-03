@@ -2,6 +2,7 @@
   "title": "EBSTool",
   "description": "elastic.io component for the Petstore API",
   "docsUrl": "",
+
   "credentials": {
 		"fields": {
       "databaseUrl": {
@@ -20,8 +21,9 @@
 				"viewClass": "TextFieldView"
 			}		      
 	},
-	"verifier": "io.elastic.AppKeyVerifier"
-	},
+	"verifier": "io.elastic.ApiKeyVerifier"
+  },
+  
   "triggers": {
     "getAllCustomer": {
       "main": "io.elastic.triggers.GetAllCustomer",
