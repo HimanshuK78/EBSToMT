@@ -56,7 +56,8 @@ public class Dbutils {
 			  logger.info("now OracleDriver will be loaded");  
 		      //Class.forName("oracle.jdbc.driver.OracleDriver");	
 			  logger.info("classes loaded successfully");   		
-     	   	 con = DriverManager.getConnection("jdbc:oracle:thin:@apps.example.com:1521:EBSDB","apps","apps");
+				// con = DriverManager.getConnection("jdbc:oracle:thin:@apps.example.com:1521:EBSDB","apps","apps");
+				con = DriverManager.getConnection(databaseUrl,username,password);
     	   	 logger.info("Database Connection {} ok." + con);
     	   	
     	    } catch (Exception e) {
