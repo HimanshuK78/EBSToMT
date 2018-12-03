@@ -1,28 +1,28 @@
 {
   "title": "EBSTool",
-  "description": "elastic.io component for the Petstore API",
+  "description": "Sample Component",
   "docsUrl": "",
 
   "credentials": {
-		"fields": {
-      "databaseUrl": {
-				"label": "Database URL",
-				"required": true,
-        "viewClass": "TextFieldView"
+    "fields":{
+        "databaseUrl": {
+            "label": "Database url",
+            "required": true,
+            "viewClass": "TextFieldView"
         },
-			"username": {
-				"label": "Database UserName",
-				"required": true,
-				"viewClass": "TextFieldView"
-			},
-			"password": {
-				"label": "Password",
-				"required": true,
-				"viewClass": "TextFieldView"
-			}		      
-	},
-	"verifier": "io.elastic.ApiKeyVerifier"
-  },
+        "username": {
+            "label": "Enter Username",
+            "required": true,
+            "viewClass": "TextFieldView"
+        },
+        "password": {
+            "label": "Enter password",
+            "required": true,
+            "viewClass": "TextFieldView"
+        }       
+    },
+    "verifier": "io.elastic.ApiKeyVerifier"
+},
   
   "triggers": {
     "getAllCustomer": {
