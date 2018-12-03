@@ -53,8 +53,8 @@ public class Dbutils {
 			 String password = passwordString.getString();
      	    
      	      */  
-		     Class.forName("oracle.jdbc.driver.OracleDriver");	
-			 logger.info("classes loaded successfully");   		
+		    // Class.forName("oracle.jdbc.driver.OracleDriver");	
+			 //logger.info("classes loaded successfully");   		
      	   	 con = DriverManager.getConnection("jdbc:oracle:thin:@apps.example.com:1521:EBSDB","apps","apps");
     	   	 logger.info("Database Connection {} ok." + con);
     	   	
