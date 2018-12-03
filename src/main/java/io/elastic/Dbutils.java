@@ -43,7 +43,7 @@ public class Dbutils {
 
     	    try {
 				
-/*
+
     	     final JsonString databaseUrlString = configuration.getJsonString("databaseUrl");
         	 final JsonString usernameString = configuration.getJsonString("username");
      	     final JsonString passwordString = configuration.getJsonString("password");
@@ -52,9 +52,9 @@ public class Dbutils {
 			 String username = usernameString.getString();
 			 String password = passwordString.getString();
      	    
-			   */  
+			   
 			  logger.info("now OracleDriver will be loaded");  
-		      Class.forName("oracle.jdbc.driver.OracleDriver");	
+		      //Class.forName("oracle.jdbc.driver.OracleDriver");	
 			  logger.info("classes loaded successfully");   		
      	   	 con = DriverManager.getConnection("jdbc:oracle:thin:@apps.example.com:1521:EBSDB","apps","apps");
     	   	 logger.info("Database Connection {} ok." + con);
