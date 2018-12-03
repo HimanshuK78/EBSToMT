@@ -7,17 +7,17 @@
       "databaseUrl": {
 				"label": "Database URL",
 				"required": true,
-        "viewClass": "TextFieldWithNoteView"
+        "viewClass": "TextFieldView"
         },
 			"username": {
 				"label": "Database UserName",
 				"required": true,
-				"viewClass": "TextFieldWithNoteView"
+				"viewClass": "TextFieldView"
 			},
 			"password": {
 				"label": "Password",
 				"required": true,
-				"viewClass": "TextFieldWithNoteView"
+				"viewClass": "TextFieldView"
 			}		      
 	},
 	"verifier": "io.elastic.sagetomt.AppKeyVerifier"
