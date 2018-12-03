@@ -1,4 +1,4 @@
-package io.elastic.petstore;
+package io.elastic;
 
 
 import io.elastic.api.CredentialsVerifier;

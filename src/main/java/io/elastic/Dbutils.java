@@ -1,4 +1,4 @@
-package io.elastic.sagetomt;
+package io.elastic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

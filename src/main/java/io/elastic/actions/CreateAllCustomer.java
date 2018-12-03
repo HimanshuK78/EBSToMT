@@ -1,4 +1,4 @@
-package io.elastic.sagetomt.actions;
+package io.elastic.actions;
 
 import javax.json.Json;
 import javax.json.JsonArray;
@@ -12,7 +12,6 @@ import io.elastic.api.ExecutionParameters;
 import io.elastic.api.InvalidCredentialsException;
 import io.elastic.api.Message;
 import io.elastic.api.Module;
-import io.elastic.sagetomt.DatabaseAcess;
 
 public class CreateAllCustomer implements Module {
 
