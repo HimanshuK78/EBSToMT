@@ -33,9 +33,3 @@ uploadArchives {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.0'
 }
-
-<dependency>
-    <groupId>io.elastic</groupId>
-    <artifactId>java-api</artifactId>
-    <version>2.0.1</version>
-</dependency>
