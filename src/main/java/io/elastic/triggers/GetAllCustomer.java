@@ -18,6 +18,8 @@ import io.elastic.api.InvalidCredentialsException;
 import io.elastic.api.Message;
 import io.elastic.api.Module;
 
+import io.elastic.DatabaseAcess;
+
 
 
 public class GetAllCustomer implements Module {
@@ -28,7 +30,7 @@ public class GetAllCustomer implements Module {
 
     @Override
     public void execute(final ExecutionParameters parameters) {
-/*
+
         final JsonObject configuration = parameters.getConfiguration();          
         JsonObject snapshot=parameters.getSnapshot();
 
@@ -39,7 +41,7 @@ public class GetAllCustomer implements Module {
         }
         try {           
             DatabaseAcess dbobject = new DatabaseAcess();
-        	final JsonArray vendorlist=dbobject.getVendorlist(configuration,vendorexecutiontime);
+        	final JsonArray vendorlist=dbobject.getCustomerList(configuration,vendorexecutiontime);
     		for(JsonValue vendorobject : vendorlist)			
     		{
     			final JsonObject body = Json.createObjectBuilder()
@@ -49,7 +51,7 @@ public class GetAllCustomer implements Module {
     	               = new Message.Builder().body(body).build();
     	          logger.info("Emitting data"+data);		
     	
-            parameters.getEventEmitter().emitData(data);
+                parameters.getEventEmitter().emitData(data);
     		}
     		
     		Date date = new Date();
@@ -62,15 +64,15 @@ public class GetAllCustomer implements Module {
         }
             
         catch (Exception e) {
-        	 logger.info("login Credentials are invalid");
+        	 logger.info("GetAllCustomer are invalid");
             try {
-				throw new InvalidCredentialsException("Failed to verify credentials", e);
+				throw new InvalidCredentialsException("GetAllCustomer are Error", e);
 			} catch (InvalidCredentialsException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
         }
-       */   
+        
     }
     
 

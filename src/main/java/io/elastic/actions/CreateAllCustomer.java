@@ -13,17 +13,19 @@ import io.elastic.api.InvalidCredentialsException;
 import io.elastic.api.Message;
 import io.elastic.api.Module;
 
+import io.elastic.DatabaseAcess;
+
 public class CreateAllCustomer implements Module {
 
     private static final Logger logger = LoggerFactory.getLogger(CreateAllCustomer.class);
    
     @Override
     public void execute(final ExecutionParameters parameters) {
-        /*
+        
         final JsonObject configuration = parameters.getConfiguration();          
              try {           
             DatabaseAcess dbobject = new DatabaseAcess();
-            final JsonArray companylist=dbobject.getcompany(configuration);
+            final JsonArray companylist=dbobject.createCustomer(configuration);
             for(JsonValue companyobject : companylist)          
             {
                 final JsonObject body = Json.createObjectBuilder()
@@ -48,7 +50,7 @@ public class CreateAllCustomer implements Module {
             }
         }
        
-*/
+
     }
     
     

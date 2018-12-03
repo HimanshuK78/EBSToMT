@@ -35,7 +35,7 @@ public class DatabaseAcess {
 
 //	private static final Logger logger = LoggerFactory.getLogger(DatabaseAcess.class);
 
-	DatabaseAcess(){
+	public DatabaseAcess(){
 
 	}
 
@@ -90,6 +90,11 @@ public class DatabaseAcess {
 		
 	}
 
+   	
+   	public JsonArray createCustomer(final JsonObject configuration) {	
+   		
+   		return null;
+   	}
 
   
 }
